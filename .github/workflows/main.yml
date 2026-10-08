@@ -1,0 +1,15 @@
+name: Code Quality and Security Check
+
+on:
+  pull_request:
+
+jobs:
+  security-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run security check
+        uses: github/codeql-action/analyze@v3
